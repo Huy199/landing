@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "antd";
+
+@layer base {
+    *,
+    *::before,
+    *::after {
+        @apply m-0 p-0 font-monstserrat font-normal;
+        box-sizing: inherit;
+    }
+
+    html {
+        @apply text-[62.5%];
+    }
+
+    body {
+        @apply box-border;
+    }
+}
