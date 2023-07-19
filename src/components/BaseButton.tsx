@@ -1,7 +1,7 @@
 import { Button } from "antd";
-
-const BaseButton = ({text}: {text: string}) => {
-    return <Button>{text}</Button>;
+import '@/assets/scss/baseButton.scss'
+const BaseButton = ({text, close}: {text: string, close: boolean}) => {
+    return <Button className={`base-button ${close ? 'close' : 'submit'}`}>{text}</Button>;
 };
 
 export default BaseButton;

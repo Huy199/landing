@@ -69,8 +69,8 @@ const ModalFilter = ({isModalOpen, setIsModalOpen}: HeaderProps) => {
         />
         </Form.Item>
         <div className='flex justify-between'>
-          <BaseButton text="Đóng"/>
-          <BaseButton text="Đăng ký"/>
+          <BaseButton text="Đóng" close={true}/>
+          <BaseButton text="Đăng ký" close={false}/>
         </div>
         </Form>
       </Modal>
