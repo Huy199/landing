@@ -8,18 +8,32 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                monstserrat: ["Montserrat", "sans-serif"],
-                nunito: ["Nunito", "sans-serif"],
+                monstserrat: ["Montserrat"],
+                nunito: ["Nunito" ],
             },
+            spacing: {
+                '22': '88px',
+                '13': '50px',
+                '3.5': '14px',
+                '4': '16px'
+            }
         },
+       
         screens: {
-            xs: "0px",
             sm: "576px",
             md: "768px",
             lg: "1024px",
             xl: "1280px",
             "2xl": "1440px",
         },
+        colors: {
+            'header': 'rgba(188, 235, 255, 0.80);',
+            'black': '#000000',
+           
+        },
+        fontSize: {
+            '2xl': '24px',
+          }
     },
     plugins: [],
 };
