@@ -14,14 +14,18 @@ const ModalFilter = ({isModalOpen, setIsModalOpen}: HeaderProps) => {
   }
 
   const handleChangePackage = () => {}
-  const handleChangeTime = () => {}
+  const handleChangeTime = () => {
+  }
+  const handleClickButton = () => {
+    setIsModalOpen(false);
+  }
 
 
   return (
     <>
       <Modal title={<p className='text-center text-2xl text-black font-bold font-nunito'>BỘ LỌC</p>} open={isModalOpen} closeIcon={false} footer={null}>
       <Divider />
-        <Form name="filter"  onFinish={onFinish}>
+        <Form name="filter"  onFinish={onFinish}  layout="vertical" >
         <Form.Item
           label="Loại gói cước"
           name="package" 
@@ -68,9 +72,9 @@ const ModalFilter = ({isModalOpen, setIsModalOpen}: HeaderProps) => {
           ]}
         />
         </Form.Item>
-        <div className='flex justify-between'>
-          <BaseButton text="Đóng" close={true}/>
-          <BaseButton text="Đăng ký" close={false}/>
+        <div className='flex justify-between gap-7.5'>
+          <BaseButton text="ĐÓNG" close={true} handleClickButton={handleClickButton}/>
+          <BaseButton text="LỌC" close={false} handleClickButton={handleClickButton}/>
         </div>
         </Form>
       </Modal>

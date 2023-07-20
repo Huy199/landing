@@ -1,0 +1,42 @@
+.header {
+    .right-header {
+        gap: 10px;
+        width: calc(100% - 344px);
+        @media(max-width: 768px) {
+            flex-direction: row-reverse;
+            margin-top: 50px;
+            width: 100%;
+        }
+        input {
+            top: 0;
+            border-radius: 6px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            background: rgba(146, 146, 146, 0.10);
+            @media(max-width: 768px) {
+                display: none;
+            }
+        }
+        position: relative;
+        .icon-search {
+            cursor: pointer;
+            position: absolute;
+            right: 42px;
+            top: 36px;
+            @media(max-width: 768px) {
+                top: 8px;
+            }
+        }
+        .icon-filter {
+
+        }
+        .input-search {
+            width: calc(100% - 34px);
+        }
+    }
+    .box-header {
+        @media(max-width: 1200px) {
+            padding: 0 16px;
+        }
+    }
+
+}

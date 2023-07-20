@@ -1,0 +1,12 @@
+.bg-bottom {
+    transform: translateY(-100%);
+   bottom: 100%;
+   .bg-white {
+    z-index: 1;
+   }
+   .bg-text {
+    position: absolute;
+    top: -13px;
+    left: 0px;
+   } 
+}

@@ -1,5 +1,34 @@
 .base-button {
-    .close {
-        color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% - 30px)/2);
+    padding: 10px 0px;
+    border-radius: 6px;
+    height: 50px;
+    &.close {
+        color: #404040;
+        text-align: center;
+        font-family: Nunito;
+        font-size: 16px;
+        font-weight: 700;
+        border: 1px solid #404040;
+        background: #FFF;
+        &:hover {
+            color: #2257C1;
+            border: none;
+
+        }
+    }
+    &.submit {
+        color: #FFF;
+        font-family: Nunito;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        border-radius: 6px;
+        background: linear-gradient(312deg, #2257C1 0%, #619EDF 100%);
+        box-shadow: 0px 10px 16px 0px rgba(34, 87, 193, 0.20);
     }
 }

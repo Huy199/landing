@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import '@/assets/scss/baseButton.scss'
-const BaseButton = ({text, close}: {text: string, close: boolean}) => {
-    return <Button className={`base-button ${close ? 'close' : 'submit'}`}>{text}</Button>;
+const BaseButton = ({text, close, handleClickButton}: {text: string, close: boolean, handleClickButton: any}) => {
+    return <Button htmlType={`${close ? 'button' : 'submit'}`} className={`base-button ${close ? 'close' : 'submit'}`} onClick={handleClickButton}>{text}</Button>;
 };
 
 export default BaseButton;

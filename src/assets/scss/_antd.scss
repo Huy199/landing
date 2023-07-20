@@ -1,5 +1,8 @@
 .ant-modal-content {
     padding: 30px !important;
+    border-radius: 20px !important;
+    max-width: 382px;
+    margin: 0 auto;
 }
 .ant-modal-header {
     margin-bottom: 0px !important;
@@ -18,7 +21,7 @@
     padding-bottom: 4px !important;
     label {
         font-size: 16px !important;
-        font-family: 'Nunito' !important;
+        font-family: var(--nunito-font) !important;
         font-weight: 400;
     }
 }
