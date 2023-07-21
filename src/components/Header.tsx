@@ -13,7 +13,6 @@ import '@/assets/scss/header.scss'
 const Header = () => {
    const [isModalOpen, setIsModalOpen] = useState(false);
    const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-   console.log(widthScreen > 768 ? LogoDeskTop : Logo)
    window.addEventListener("resize", () => {
       setWidthScreen(window.innerWidth);
    });

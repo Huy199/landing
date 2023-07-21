@@ -4,7 +4,7 @@ import Banner from "@/components/Banner";
 import ForYou from "@/components/ForYou";
 
 const Home = () => (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col">
         <Header/>
         <Banner/>
         <ForYou/>

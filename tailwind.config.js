@@ -17,8 +17,13 @@ module.exports = {
                 '13': '50px',
                 '3.5': '14px',
                 '4': '16px',
-                '7.5': '30px'
-            }
+                '7.5': '30px',
+                '8.5': '34px',
+                '16': '90px'
+            },
+            lineHeight: {
+                '6': '24px',
+              }
         },
        
         screens: {
@@ -32,10 +37,13 @@ module.exports = {
         colors: {
             'header': 'rgba(188, 235, 255, 0.80);',
             'black': '#000000',
+            'mobifone': '#0761AF'
            
         },
         fontSize: {
+            'base': '16px',
             '2xl': '24px',
+            '8xl': '83px'
           }
     },
     plugins: [],
