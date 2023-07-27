@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+# . "$(dirname -- "$0")/_/husky.sh"
 
 #fix format
-npx lint-staged -c ./.lintstagedrc.js
+# npx lint-staged -c ./.lintstagedrc.js

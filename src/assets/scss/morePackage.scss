@@ -1,0 +1,69 @@
+.more-package-container {
+    @media (min-width: 1024px) {
+        width: 1024px;
+        padding: 0 16px;
+        margin: 0 auto;
+        margin-top: 80px;
+    }
+    @media (max-width: 1023px) {
+        width: 100%;
+        padding: 0 16px;
+        margin: 0 auto;
+        margin-top: 24px;
+    }
+   
+    .more-package {
+        position: relative;
+        border-radius: 10px;
+        border: 1px dashed #2257C1;
+        background: #EEF6FF;
+        display: flex;
+        justify-content: space-between;
+        padding-top: '23px';
+        align-items: center;
+        height: 91px;
+        box-sizing: border-box;
+        
+        .title {
+            font-size: 16px;
+            margin-left: 32px;
+            max-width: 261px;
+            height: 45px;
+            @media(max-width: '768px') {
+                margin: 0;
+                max-width: 100%;
+                width: 100%;
+            }
+        }
+        .image-more{
+            display: none;
+            @media(min-width: '1200px') {
+                display: inline;
+            }
+        }
+        button {
+            width: 220px;
+            margin-left: 28px;
+            margin-right: 18px;
+            @media(max-width: '768px') {
+                margin: 0;
+                margin-top: 14px;
+                width: 100%;
+            }
+        }
+        @media(max-width: '768px') {
+            display: flex;
+            flex-direction: column;
+            padding: 32px;
+            height: 174px;
+        }
+        @media(max-width: '410px') {
+            display: flex;
+            flex-direction: column;
+            height: 174px;
+        }
+        .more-slider {
+    
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.more-slider-container {
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    @media (min-width: 1024px) {
+        width: 1024px;
+        height: 206px;
+        margin: 0 auto;
+        margin-top: 110px;
+        padding: 0 16px;
+    }
+    @media (max-width: 1023px) {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        margin-top: 24px;
+        
+    }
+    
+    .slider1 {
+        display: block;
+        margin: 0 auto;
+    }
+    .slick-dots {
+        li {
+            width: 0;
+            margin-right: 8px;
+            &.slick-active {
+                button {
+                    width: 32px;
+                    height: 8px;
+                    background:  #0761AF;
+                }
+            }
+            button {
+                width: 8px;
+                height: 8px;
+                border-radius: 10px;
+                opacity: 0.5;
+                background:  #0761AF;
+                
+
+            }
+        }
+        bottom: -17px;
+    }
+    .slick-list {
+        border-radius: 10px;
+    }
+
+}

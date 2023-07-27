@@ -1,0 +1,36 @@
+.package-content {
+    margin: 0 auto;
+    margin-top: 20px;
+    .tilte {
+        font-size: 24px;
+    }
+    .tab-index {
+        font-size: 16px;
+        max-width: 120px;
+        height: 40px;
+        padding: 0 30px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &.tab-active {
+            color: #FFF;
+            border-radius: 6px 6px 0px 0px;
+            background:  #0761AF;
+        }
+        &.tab-non-active {
+           color: #404040;
+        }
+    }
+    .ant-tabs-tab {
+        padding: 0 !important;
+        background: #FFF !important;
+        border: none !important;
+    }
+    .ant-tabs-nav-wrap {
+        justify-content: center;
+        border-bottom: 1px solid #0b99ff;
+    }
+
+}

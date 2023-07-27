@@ -1,41 +1,74 @@
 "use client";
 
-import Image from "next/image"
-import Logo from "@/assets/images/logo.svg"
-import LogoDeskTop from "@/assets/images/logo_desktop.svg"
-import Search from "@/assets/images/search.svg"
-import Filter from "@/assets/images/filter.svg"
-import { useState } from "react"
-import ModalFilter from "./ModalFilter"
+import Image from "next/image";
+import Close from "@/assets/images/close-circle.svg";
+import Search from "@/assets/images/search.svg";
+import Filter from "@/assets/images/filter.svg";
+import { useState } from "react";
+import ModalFilter from "./ModalFilter";
 import { Input } from "antd";
-import '@/assets/scss/header.scss'
+import "@/assets/scss/header.scss";
 
 const Header = () => {
-   const [isModalOpen, setIsModalOpen] = useState(false);
-   const [widthScreen, setWidthScreen] = useState(window.innerWidth);
-   window.addEventListener("resize", () => {
-      setWidthScreen(window.innerWidth);
-   });
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isSearchMobile, setIsSearchMobile] = useState(2);
 
-   const showModal = () => {
-     setIsModalOpen(true);
-   };
+    const showModal = () => {
+        setIsModalOpen(true);
+    };
 
-   return (
-      <div className="header w-full">
-      <header className="flex bg-header  max-md:h-22 max-3xl:h-24 gap-[129px]]" >
-         <div className="w-[1024px] flex justify-between mx-auto box-header">
-         <Image src={widthScreen > 768 ? LogoDeskTop : Logo} alt="logo" className="max-md:mt-13"/>
-         <div className="flex right-header">
-            <Input className="h-[40px] mt-[28px] input-search" placeholder="Tìm gói..." />
-            <Image src={Search} alt="logo-search" className="icon-search" />
-            <Image src={Filter} alt="logo filter" className="max-sm:ml-4 hover:cursor-pointer icon-filter"  onClick={showModal} />
-         </div>
-         </div>
-      </header>
-      <ModalFilter isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
-      </div>
-   ) 
+    const openSearch = () => {
+        setIsSearchMobile(1);
+    };
+
+    const closeSearch = () => {
+        setIsSearchMobile(0);
+    };
+    return (
+        <div className="header w-full">
+            <header className="flex bg-header header-info gap-[129px]]">
+                <div className="w-[1024px] flex justify-between mx-auto box-header">
+                    <div className="logo-header" />
+                    <div className="flex right-header">
+                        <Input
+                            className="h-[40px] mt-[28px] input-search"
+                            placeholder="Tìm gói..."
+                        />
+                        <Image
+                            src={Search}
+                            alt="logo-search"
+                            className="icon-search"
+                            onClick={openSearch}
+                        />
+                        <Image
+                            src={Filter}
+                            alt="logo filter"
+                            className="max-sm:ml-4 hover:cursor-pointer icon-filter"
+                            onClick={showModal}
+                        />
+                    </div>
+                </div>
+            </header>
+            <ModalFilter isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+            <div
+                className={`search-mobile-container ${
+                    isSearchMobile === 2 ? "" : isSearchMobile === 1 ? "mobile" : "close"
+                }`}
+            >
+                <div className="search-mobile"></div>
+                <Input
+                    className="h-[40px] mt-[28px] input-search-mobile"
+                    placeholder="Tìm gói..."
+                />
+                <Image src={Search} alt="logo-search" className="icon-search-mobile" />
+                <Image
+                    src={Close}
+                    alt="logo close"
+                    className="max-sm:ml-4 hover:cursor-pointer icon-close-mobile"
+                    onClick={closeSearch}
+                />
+            </div>
+        </div>
+    );
 };
 export default Header;
-

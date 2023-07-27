@@ -1,14 +1,14 @@
 "use client";
-import { Header } from "@/components";
-import Banner from "@/components/Banner";
-import ForYou from "@/components/ForYou";
 
-const Home = () => (
-    <main className="flex min-h-screen flex-col">
-        <Header/>
-        <Banner/>
-        <ForYou/>
-    </main>
-);
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+const Home = () => {
+    const router = useRouter();
+    useEffect(() => {
+        router.push("/home");
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+};
 
 export default Home;

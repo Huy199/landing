@@ -10,6 +10,7 @@ module.exports = {
             fontFamily: {
                 montserrat: ["Montserrat"],
                 nunito: ["Nunito"],
+                arial: ["Arial"]
             },
             spacing: {
                 22: "88px",
