@@ -8,10 +8,12 @@ import { useState } from "react";
 import ModalFilter from "./ModalFilter";
 import { Input } from "antd";
 import "@/assets/scss/header.scss";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isSearchMobile, setIsSearchMobile] = useState(2);
+    const router = useRouter();
 
     const showModal = () => {
         setIsModalOpen(true);
@@ -28,7 +30,7 @@ const Header = () => {
         <div className="header w-full">
             <header className="flex bg-header header-info gap-[129px]]">
                 <div className="w-[1024px] flex justify-between mx-auto box-header">
-                    <div className="logo-header" />
+                    <div className="logo-header" onClick={() =>  router.push("/home")}/>
                     <div className="flex right-header">
                         <Input
                             className="h-[40px] mt-[28px] input-search"

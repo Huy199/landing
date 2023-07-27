@@ -4,8 +4,13 @@ import "@/assets/scss/morePackage.scss";
 import MorePackageImage from "@/assets/images/morepackage.svg";
 import Image from "next/image";
 import BaseButton from "./BaseButton";
+import { useRouter } from "next/navigation";
+
 const MorePackage = () => {
-    const handleMorePackage = () => {};
+    const router = useRouter();
+    const handleMorePackage = () => {
+        router.push("/home/datas");
+    };
     return (
         <div className="more-package-container">
             <div className="more-package">

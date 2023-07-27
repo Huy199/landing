@@ -8,11 +8,15 @@ interface HeaderProps {
 }
 
 const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
+
+    const [donate, setDonate] = useState(false);
+    const [validate, setvalidate] = useState(false);
     const onFinish = (value: any) => {
         console.log("value: ", value);
+        phoneValidator(null, value?.myPhone);
         // setIsModalOpen(false);
     };
-    const [donate, setDonate] = useState(false);
+   
 
     // const handleChangePackage = () => {};
     const handleDonate = () => {
@@ -22,6 +26,14 @@ const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
         setIsModalOpen(false);
     };
     const handleClickButtonSubmit = () => {};
+
+    const phoneValidator = (a: any, value: string) => {
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(value) && value) {
+          return Promise.reject('Số thuê bao không hợp lệ');
+        }
+        return Promise.resolve();
+      };
 
     return (
         <>
@@ -61,6 +73,7 @@ const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
                                     required: true,
                                     message: "Số điện không được để trống",
                                 },
+                                { validator: phoneValidator, validateTrigger: 'unKnown'},
                             ]}
                         >
                             <Input style={{ width: "100%" }} />
