@@ -1,6 +1,50 @@
 .setting-container {
-    background: url('../images/bgSetting.svg') no-repeat;
-    background-size: contain;
-    max-width: 1920px;
+    background: url('../images/settingBig.svg') no-repeat;
+    width: 100%;
     height: 490px;
+    @media (max-width: 414px) {
+    background: url('../images/settingSmall.svg') no-repeat;
+    }
+    .setting-content {
+        @media(min-width: 1024px) {
+            width: 1024px;
+            padding: 0 16px;
+            padding-top: 10.3133%;
+
+        }
+        margin: 0 auto;
+        padding: 0 16px;
+        padding-top: 10.3133%;
+        width: 100%;
+        .text {
+            .content {
+                margin-top: 12px;
+            }
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            .gg-play{
+                background: url('../images/gplay.svg') no-repeat;
+                width: 200px;
+                height: 61px;
+                margin-right: 20px;
+                @media (max-width: 560px) {
+                    margin-right: 0px;
+                }
+            }
+            .app-store{
+                background: url('../images/appstore.svg') no-repeat;
+                width: 200px;
+                height: 61px;
+                @media (max-width: 560px) {
+                    margin-top: 20px;
+                }
+            }
+            @media (max-width: 560px) {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+        }
+    }
 }

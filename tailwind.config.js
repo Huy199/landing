@@ -28,6 +28,7 @@ module.exports = {
         },
 
         screens: {
+            xs: "320px",
             sm: "576px",
             md: "768px",
             lg: "1024px",
@@ -39,6 +40,7 @@ module.exports = {
             header: "rgba(188, 235, 255, 0.80);",
             black: "#000000",
             mobifone: "#0761AF",
+            white: "#FFF"
         },
         fontSize: {
             base: "16px",

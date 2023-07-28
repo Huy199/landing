@@ -1,0 +1,44 @@
+.header-datas {
+    @media (min-width: 1024px) {
+        width: 1024px;
+        margin: 0 auto;
+        padding: 0 16px;
+        margin-top: 22px;
+        display: flex;
+    }
+    margin-top: 22px;
+    padding: 0 16px;
+    .title {
+        display: flex;
+        width: 165px;
+        flex-direction: column;
+        margin-right: 48px;
+        .header {
+            font-size: 13px;
+        }
+        .datas {
+            font-size: 17px;
+            width: 165px;
+        }
+    }
+    .content{
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        justify-content: space-between;
+        @media (max-width: 576px) {
+            flex-direction: column;
+        }
+        .search-datas {
+           height: 40px;
+           padding: 11px 12px;
+           margin: auto;
+        }
+        .filter-datas {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+        }
+    }
+}

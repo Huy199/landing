@@ -1,17 +1,19 @@
 "use client";
 
 import { HeaderList } from "@/components";
-import DataForyou from "@/components/DataForyou";
+import DataForyouList from "@/components/DataForyouList";
+import FilterDatas from "@/components/FilterDatas";
 
 
-const HomePage = () => (
+const HomePageDatas = () => (
     <main className="flex min-h-screen flex-col">
         <HeaderList />
-        <div className="mt-[66px]">
-
-       <DataForyou/>
+        <FilterDatas/>
+        <div className="lg:mt-[90px]">
+            <DataForyouList />
         </div>
+        <button></button>
     </main>
 );
 
-export default HomePage;
+export default HomePageDatas;
