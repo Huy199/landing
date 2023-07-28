@@ -6,6 +6,7 @@ import MorePackage from "@/components/MorePackage";
 import Popular from "@/components/Popular";
 import PackageContent from "@/components/PackageContent";
 import Setting from "@/components/Setting";
+import Footer from "@/components/Footer";
 
 const HomePage = () => (
     <main className="flex min-h-screen flex-col">
@@ -16,6 +17,7 @@ const HomePage = () => (
         <Popular />
         <PackageContent />
         <Setting />
+        <Footer/>
     </main>
 );
 

@@ -1,0 +1,20 @@
+.footer-container {
+    @media (min-width: 1024) {
+        width: 1024px;
+        margin: 0 auto;
+        margin-top: 32px;
+    }
+    margin-top: 32px;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    .info {
+        width: 367px;
+        .logo {
+            background: url("../images/logoFooter.svg") no-repeat;
+            width: 200px;
+            height: 43px;
+            margin-bottom: 16px;
+        }
+    }
+}
