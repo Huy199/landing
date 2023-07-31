@@ -40,6 +40,9 @@
                 font-size: 24px;
                 font-family: Arial;
                 margin-bottom: 12px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
                 @media (max-width: 1023px) {
                     margin-bottom: 7px;
                 }

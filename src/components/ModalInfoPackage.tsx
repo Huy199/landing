@@ -2,16 +2,20 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { Divider, Modal } from "antd";
 import BaseButton from "./BaseButton";
 import "@/assets/scss/modalInforPackage.scss"
-interface HeaderProps {
-    isModalOpen: boolean;
-    setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+import { ModalPackageInfo, PackageType } from "@/constants";
+
+interface ModalInfoPackageProps {
+    isModalInfo: ModalPackageInfo;
+    setIsModalInfo: Dispatch<SetStateAction<ModalPackageInfo>>;
 }
 
-const ModalInfoPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
-    console.log('123', isModalOpen)
+const ModalInfoPackage = ({ isModalInfo, setIsModalInfo }: ModalInfoPackageProps) => {
+    console.log('123', isModalInfo)
 
     const handleClickButton = () => {
-        setIsModalOpen(false);
+        setIsModalInfo({
+            status: false,
+        });
     };
     const handleClickButtonSubmit = () => {};
 
@@ -19,18 +23,18 @@ const ModalInfoPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
         <>
             <Modal
                 className="modal-infor-package"
-                open={isModalOpen}
+                open={isModalInfo?.status}
                 closeIcon={false}
                 footer={null}
             >
-                <p className="header text-center text-2xl text-white font-bold font-arial leading-normal">MAX 20</p>
+                <p className="header text-center text-2xl text-white font-bold font-arial leading-normal">{isModalInfo?.data?.name}</p>
                 <div className="px-[40px]">
-                   <div className="text-black font-arial font-bold text-2xl mt-8 leading-normal">MAX 15</div>
-                   <div className="text-black font-arial font-normal text-base mt-4 leading-normal">Data: 500mb</div>
-                   <div className="text-black font-arial font-normal text-base mt-4 leading-normal">HSD: 1 Ngày</div>
-                   <div className="text-black font-arial font-normal text-base mt-4 leading-normal">Giá: 15.000 đ</div>
+                   <div className="text-black font-arial font-bold text-2xl mt-8 leading-normal">{isModalInfo?.data?.name}</div>
+                   <div className="text-black font-arial font-normal text-base mt-4 leading-normal">Data: {isModalInfo?.data?.data}mb</div>
+                   <div className="text-black font-arial font-normal text-base mt-4 leading-normal">HSD: Data: {isModalInfo?.data?.usedTime} Ngày</div>
+                   <div className="text-black font-arial font-normal text-base mt-4 leading-normal">Giá: Data: {isModalInfo?.data?.price} đ</div>
                    <ul className="list-disc pl-[25px]">
-                        <li className="text-black font-arial font-normal text-base mt-4">Miễn phí 1GB/ngày (30GB/30 ngày) truy cập Internet, hết dung lượng tốc độ cao, hệ thống dừng kết nối internet</li>
+                        <li className="text-black font-arial font-normal text-base mt-4">{isModalInfo?.data?.description}</li>
                    </ul>
                 </div>
                 <div className="flex justify-between gap-7.5 pb-[40px] px-[40px] mt-[34px]">

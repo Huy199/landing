@@ -2,26 +2,29 @@ import React, { Dispatch, SetStateAction, useState } from "react";
 import { Divider, Form, Input, Modal } from "antd";
 import BaseButton from "./BaseButton";
 import { Checkbox } from "antd";
+import { ModalRegister } from "@/constants";
 interface HeaderProps {
-    isModalOpen: boolean;
-    setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+    popupRegister: ModalRegister;
+    setPopupRegister: Dispatch<SetStateAction< ModalRegister>>;
 }
 
-const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
+const ModalRegisterPackage = ({ popupRegister, setPopupRegister }: HeaderProps) => {
+    console.log('id', popupRegister)
 
     const [donate, setDonate] = useState(false);
     const onFinish = (value: any) => {
         phoneValidator(null, value?.myPhone);
-        // setIsModalOpen(false);
+        // setPopupRegister(false);
     };
    
 
-    // const handleChangePackage = () => {};
     const handleDonate = () => {
         setDonate(!donate);
     };
     const handleClickButton = () => {
-        setIsModalOpen(false);
+        setPopupRegister({
+            status: false
+        });
     };
     const handleClickButtonSubmit = () => {};
 
@@ -39,7 +42,7 @@ const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
                 title={
                     <p className="text-center text-2xl text-black font-bold font-nunito">ĐĂNG KÝ</p>
                 }
-                open={isModalOpen}
+                open={popupRegister?.status}
                 closeIcon={false}
                 footer={null}
             >

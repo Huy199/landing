@@ -15,6 +15,9 @@ const Banner = () => (
             <div className="bg2">
                 <Image src={SliderBig} alt="logo" className="bg-white w-full" />
             </div>
+            <div className="bg2">
+                <Image src={SliderBig} alt="logo" className="bg-white w-full" />
+            </div>
         </Carousel>
         <div className="banner-bottom">
             <Image src={BgBottomWhiteBig} alt="logo" className="banner-bottom-white w-full" />
