@@ -2,8 +2,10 @@
 import "@/assets/scss/dataForyou.scss";
 import { useState } from "react";
 import ModalRegisterPackage from "@/components/ModalRegisterPackage";
+import ModalInfoPackage from "./ModalInfoPackage";
 const DataForyou = () => {
     const [isShowPopup, setIsShowPopup] = useState(false);
+    const [isShowPopupInfo, setIsShowPopupInfo] = useState(false);
     return (
         <div className="data-foryou-container lg:px-4 sxm:px-4 xs:px-4">
             <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-2 gap-4 data-foryou">
@@ -72,7 +74,7 @@ const DataForyou = () => {
                 </div>
                 <div className="package-data">
                     <div className="range" />
-                    <div className="info">
+                    <div className="info" onClick={() => setIsShowPopupInfo(true)}>
                         <p className="title font-bold font-arial">MAX 15</p>
                         <p className="memory font-normal font-arial">
                             <div className="data-image" />
@@ -98,6 +100,7 @@ const DataForyou = () => {
                 </div>
             </div>
             <ModalRegisterPackage isModalOpen={isShowPopup} setIsModalOpen={setIsShowPopup} />
+            <ModalInfoPackage isModalOpen={isShowPopupInfo} setIsModalOpen={setIsShowPopupInfo}/>
         </div>
     );
 };

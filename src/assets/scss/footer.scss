@@ -1,20 +1,80 @@
 .footer-container {
-    @media (min-width: 1024) {
-        width: 1024px;
-        margin: 0 auto;
+    .footer-contact {
+        @media (min-width: 1024px) {
+            width: 1024px;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+        @media (max-width: 840px) {
+            flex-direction: column;
+        }
         margin-top: 32px;
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        .info {
+            width: 367px;
+            @media (max-width: 375px) {
+                width: 300px;
+            }
+            .logo {
+                background: url("../images/logoFooter.svg") no-repeat;
+                width: 200px;
+                height: 43px;
+                margin-bottom: 16px;
+            }
+            .contact {
+                .call {
+                    display: flex;
+                    align-items: center;
+                    .call-icon {
+                        background: url("../images/call.svg") no-repeat;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 16px;
+                    }
+                }
+                .sms {
+                    display: flex;
+                    align-items: center;
+                    .sms-icon {
+                        background: url("../images/sms.svg") no-repeat;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 16px;
+                    }
+                }
+                .location {
+                    display: flex;
+                    align-items: center;
+                    .location-icon {
+                        background: url("../images/location.svg") no-repeat;
+                        width: 16px;
+                        height: 16px;
+                        margin-right: 16px;
+                    }
+                }
+            }
+        }
+        .gg-map {
+            iframe {
+                @media (max-width: 840px) {
+                    width: 100% !important;
+                    height: 178px !important;
+                    margin-top: 23px;
+                }
+            }
+        
+        }
     }
-    margin-top: 32px;
-    padding: 0 16px;
-    display: flex;
-    justify-content: space-between;
-    .info {
-        width: 367px;
-        .logo {
-            background: url("../images/logoFooter.svg") no-repeat;
-            width: 200px;
-            height: 43px;
-            margin-bottom: 16px;
+    .footer-bottom {
+        margin-top: 64px;
+        color: #656565;
+        padding: 50px 0;
+        @media (max-width: 840px) {
+            padding: 20px 0;
+            margin-top: 32px;
+
         }
     }
 }

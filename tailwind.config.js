@@ -19,12 +19,16 @@ module.exports = {
                 3.5: "14px",
                 4: "16px",
                 7.5: "30px",
+                8: "32px",
                 8.5: "34px",
                 16: "90px",
             },
             lineHeight: {
                 6: "24px",
             },
+            colors: {
+                'footer': '#EBEBEB',
+              },
         },
 
         screens: {
@@ -40,7 +44,8 @@ module.exports = {
             header: "rgba(188, 235, 255, 0.80);",
             black: "#000000",
             mobifone: "#0761AF",
-            white: "#FFF"
+            white: "#FFF",
+        
         },
         fontSize: {
             base: "16px",

@@ -10,9 +10,7 @@ interface HeaderProps {
 const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
 
     const [donate, setDonate] = useState(false);
-    const [validate, setvalidate] = useState(false);
     const onFinish = (value: any) => {
-        console.log("value: ", value);
         phoneValidator(null, value?.myPhone);
         // setIsModalOpen(false);
     };
@@ -57,10 +55,28 @@ const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
                     </Form.Item>
                     {donate ? (
                         <>
-                            <Form.Item label="Số điện thoại người gửi tặng" name="time">
+                            <Form.Item 
+                                label="Số điện thoại người gửi tặng" 
+                                name="sender"  
+                                rules={[
+                                {
+                                    required: true,
+                                    message: "Số điện không được để trống",
+                                },
+                                { validator: phoneValidator, validateTrigger: 'unKnown'},
+                            ]}>
                                 <Input style={{ width: "100%" }} />
                             </Form.Item>
-                            <Form.Item label="Số điện thoại người nhận" name="time">
+                            <Form.Item 
+                                label="Số điện thoại người nhận" 
+                                name="receiver"  
+                                rules={[
+                                {
+                                    required: true,
+                                    message: "Số điện không được để trống",
+                                },
+                                { validator: phoneValidator, validateTrigger: 'unKnown'},
+                            ]}>
                                 <Input style={{ width: "100%" }} />
                             </Form.Item>
                         </>
@@ -87,7 +103,7 @@ const ModalRegisterPackage = ({ isModalOpen, setIsModalOpen }: HeaderProps) => {
                             handleClickButton={handleClickButton}
                         />
                         <BaseButton
-                            text="LỌC"
+                            text="ĐĂNG KÝ"
                             close={false}
                             handleClickButton={handleClickButtonSubmit}
                         />

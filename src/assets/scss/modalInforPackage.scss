@@ -1,0 +1,18 @@
+.modal-infor-package {
+    .header {
+        border-radius: 20px 20px 0px 0px;
+        background: linear-gradient(225deg, #3D9BED 0%, #0761AF 100%);
+        height: 113px;
+        padding-top: 32px;
+    }
+    .ant-divider {
+        margin-top: 0;
+    }
+    .ant-modal-content {
+        padding: 0 !important;
+        max-width: 640px;
+    }
+    .ant-modal-body {
+        line-height: normal;
+    }
+}
