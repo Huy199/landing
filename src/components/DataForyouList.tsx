@@ -9,18 +9,15 @@ const DataForyouList = () => {
     const [popupRegister, setPopupRegister] = useState<ModalRegister>({
         status: false
     });
-    const [popupPackageInfo, setPopupPackageInfo] = useState<ModalPackageInfo>({status: false});
+
+    const [popupPackageInfo, setPopupPackageInfo] = useState<ModalPackageInfo>({ status: false });
 
     const [datas, setDatas] = useState([]);
 
     useEffect(() => {
         fetch("http://10.4.202.125:8080/services/landingpagecorecms/api/data-packs?size=9&page=0")
-      .then(response => {
-        return response.json()
-      })
-      .then(data => {
-        setDatas(data)
-      })
+            .then(response => response.json())
+            .then(data => setDatas(data));
     },[]);
 
     return (
@@ -28,7 +25,7 @@ const DataForyouList = () => {
             <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 xs:grid-cols-2 gap-4 data-foryou">
             {
                     datas?.map((data : PackageType) => (
-                        <div className="package-data">
+                        <div key={data?.id} className="package-data">
                             <div className="range" />
                             <div className="info" onClick={() => setPopupPackageInfo({
                                 status: true,
@@ -64,8 +61,14 @@ const DataForyouList = () => {
                 }
             </div>
             <button className="more-datas font-bold font-arial text-base">Xem thêm</button>
-            <ModalRegisterPackage popupRegister={popupRegister} setPopupRegister={setPopupRegister} />
-            <ModalInfoPackage isModalInfo={popupPackageInfo} setIsModalInfo={setPopupPackageInfo}/>
+            <ModalRegisterPackage 
+                popupRegister={popupRegister} 
+                setPopupRegister={setPopupRegister} 
+            />
+            <ModalInfoPackage 
+                isModalInfo={popupPackageInfo} 
+                setIsModalInfo={setPopupPackageInfo}
+            />
         </div>
     );
 };

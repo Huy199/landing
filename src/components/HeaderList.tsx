@@ -1,12 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import Close from "@/assets/images/close-circle.svg";
-import Search from "@/assets/images/search.svg";
-import Filter from "@/assets/images/filter.svg";
-import { useState } from "react";
-import ModalFilter from "./ModalFilter";
-import { Input } from "antd";
 import "@/assets/scss/header.scss";
 import { useRouter } from "next/navigation";
 

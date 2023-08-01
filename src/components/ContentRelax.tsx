@@ -2,11 +2,9 @@
 
 import "@/assets/scss/contentRelax.scss";
 import { Carousel } from "antd";
-const ContentRelax = () => {
-    const handleClickButton = () => {};
-    return (
-           <div className="content-relax-container lg:px-4 sxm:px-4 xs:px-4">
-            <Carousel>
+const ContentRelax = () => (
+    <div className="content-relax-container lg:px-4 sxm:px-4 xs:px-4">
+        <Carousel>
             <div className="data-foryou">
                 <div className="package-data">
                     <div className="range" />
@@ -72,9 +70,7 @@ const ContentRelax = () => {
                     <button className="btn-subscrice font-bold">ĐĂNG KÝ NGAY</button>
                 </div>
             </div>
-           
-            </Carousel>
-        </div>
-    );
-};
+        </Carousel>
+    </div>
+);
 export default ContentRelax;

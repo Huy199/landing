@@ -1,3 +1,4 @@
+
 import React, { Dispatch, SetStateAction, useState } from "react";
 import { Divider, Form, Input, Modal } from "antd";
 import BaseButton from "./BaseButton";
@@ -9,10 +10,19 @@ interface HeaderProps {
 }
 
 const ModalRegisterPackage = ({ popupRegister, setPopupRegister }: HeaderProps) => {
-    console.log('id', popupRegister)
-
     const [donate, setDonate] = useState(false);
+
+    /* @typescript-eslint/no-explicit-any */
+    const phoneValidator = (a: any, value: string) => {
+        const phoneRegex = /^\d{10}$/;
+        if (!phoneRegex.test(value) && value) {
+          return Promise.reject("Số thuê bao không hợp lệ");
+        }
+        return Promise.resolve();
+      };
+    
     const onFinish = (value: any) => {
+        
         phoneValidator(null, value?.myPhone);
         // setPopupRegister(false);
     };
@@ -28,13 +38,7 @@ const ModalRegisterPackage = ({ popupRegister, setPopupRegister }: HeaderProps) 
     };
     const handleClickButtonSubmit = () => {};
 
-    const phoneValidator = (a: any, value: string) => {
-        const phoneRegex = /^\d{10}$/;
-        if (!phoneRegex.test(value) && value) {
-          return Promise.reject('Số thuê bao không hợp lệ');
-        }
-        return Promise.resolve();
-      };
+   
 
     return (
         <>
@@ -66,7 +70,7 @@ const ModalRegisterPackage = ({ popupRegister, setPopupRegister }: HeaderProps) 
                                     required: true,
                                     message: "Số điện không được để trống",
                                 },
-                                { validator: phoneValidator, validateTrigger: 'unKnown'},
+                                { validator: phoneValidator, validateTrigger: "unKnown" },
                             ]}>
                                 <Input style={{ width: "100%" }} />
                             </Form.Item>
@@ -78,7 +82,7 @@ const ModalRegisterPackage = ({ popupRegister, setPopupRegister }: HeaderProps) 
                                     required: true,
                                     message: "Số điện không được để trống",
                                 },
-                                { validator: phoneValidator, validateTrigger: 'unKnown'},
+                                { validator: phoneValidator, validateTrigger: "unKnown" },
                             ]}>
                                 <Input style={{ width: "100%" }} />
                             </Form.Item>
@@ -92,7 +96,7 @@ const ModalRegisterPackage = ({ popupRegister, setPopupRegister }: HeaderProps) 
                                     required: true,
                                     message: "Số điện không được để trống",
                                 },
-                                { validator: phoneValidator, validateTrigger: 'unKnown'},
+                                { validator: phoneValidator, validateTrigger: "unKnown" },
                             ]}
                         >
                             <Input style={{ width: "100%" }} />

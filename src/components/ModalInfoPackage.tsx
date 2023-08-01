@@ -1,8 +1,8 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import { Divider, Modal } from "antd";
+import React, { Dispatch, SetStateAction } from "react";
+import { Modal } from "antd";
 import BaseButton from "./BaseButton";
-import "@/assets/scss/modalInforPackage.scss"
-import { ModalPackageInfo, PackageType } from "@/constants";
+import "@/assets/scss/modalInforPackage.scss";
+import { ModalPackageInfo } from "@/constants";
 
 interface ModalInfoPackageProps {
     isModalInfo: ModalPackageInfo;
@@ -10,8 +10,6 @@ interface ModalInfoPackageProps {
 }
 
 const ModalInfoPackage = ({ isModalInfo, setIsModalInfo }: ModalInfoPackageProps) => {
-    console.log('123', isModalInfo)
-
     const handleClickButton = () => {
         setIsModalInfo({
             status: false,
